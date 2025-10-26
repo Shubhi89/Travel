@@ -1,18 +1,17 @@
 import { ID } from 'appwrite';
 import React, { useState } from 'react';
 import { Link, redirect } from 'react-router';
-import { signUp } from '~/appwrite/auth';
+import { signIn } from '~/appwrite/auth';
 
 
-const SignUp = () => {
+const SignIn = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSignUp = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSignIn = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const userId = ID.unique();
-    await signUp(userId, email, password);
-    redirect('/sign-in');
+    await signIn(email, password);
+    redirect('/dashboard');
   };
 
   return (
@@ -26,12 +25,12 @@ const SignUp = () => {
             <h1 className='p-28-bold text-dark-100'>TravaNest</h1>
           </header>
           <article>
-            <h2 className='p-28-semibold text-dark-100 text-center'>Start Your Travel Journey</h2>
+            <h2 className='p-28-semibold text-dark-100 text-center'>Welcome Back</h2>
             <p className='p-18-regular text-center text-gray-100 !leading-7'>
-              Sign up with your Email to manage destinations, itineraries and user activity with ease
+              Sign In to continue your travel journey
             </p>
           </article>
-          <form onSubmit={handleSignUp}>
+          <form onSubmit={handleSignIn}>
             <input
               type="email"
               placeholder="Email"
@@ -47,15 +46,13 @@ const SignUp = () => {
               className="form-input"
             />
             <button type="submit" className='button-class !h-11 !w-full'>
-              <span className='p-18-semibold text-white'>Sign Up</span>
+              <span className='p-18-semibold text-white'>Sign In</span>
             </button>
           </form>
-          <p className='p-18-bold text-center mt-5'>Already a User ? </p>
-          <Link to='/sign-in' className='p-18-semibold text-primary-100 text-center'>Sign In</Link>
         </div>
       </section>
     </main>
-  );
+    );
 };
 
-export default SignUp;
+export default SignIn;
