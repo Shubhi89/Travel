@@ -2,6 +2,8 @@ import TradingViewWidget from "@/components/TradingViewWidget"
 import { Button } from "@/components/ui/button"
 import { MARKET_OVERVIEW_WIDGET_CONFIG } from "@/lib/constants"
 
+
+
 const Home = () => {
   return (
     <div className="flex min-h-screen home-wrapper">

@@ -6,11 +6,11 @@ const useTradingViewWidget = (
   config: Record<string, unknown>,
   height = 600
 ) => {
-  const containerRef = useRef<HTMLDivElement | null>();
+  const containerRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    if (!containerRef) return;
-    if (containerRef.current?.dataset.loaded) return;
-      containerRef.current.innerHTML = `<div class='tadingview-widget-container__widget' style='width: 100%; height : ${height}px;'></div>`;
+    if (!containerRef.current) return;
+    if (containerRef.current.dataset.loaded) return;
+      containerRef.current.innerHTML = `<div class='tradingview-widget-container__widget' style='width: 100%; height : ${height}px;'></div>`;
 
       const script = document.createElement("script");
       script.src = scriptUrl;
