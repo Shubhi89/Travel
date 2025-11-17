@@ -170,13 +170,20 @@ export const MARKET_DATA_WIDGET_CONFIG = {
     ],
 };
 
-export const SYMBOL_INFO_WIDGET_CONFIG = (symbol: string) => ({
-    symbol: symbol.toUpperCase(),
-    colorTheme: 'dark',
-    isTransparent: true,
-    locale: 'en',
-    width: '100%',
-    height: 170,
+export const SYMBOL_INFO_WIDGET_CONFIG = (symbol: string): {
+  symbol: string;
+  colorTheme: string;
+  isTransparent: boolean;
+  locale: string;
+  width: string | number;
+  height: number;
+} => ({
+  symbol: symbol.toUpperCase(),
+  colorTheme: 'dark',
+  isTransparent: true,
+  locale: 'en',
+  width: '100%',
+  height: 170,
 });
 
 export const CANDLE_CHART_WIDGET_CONFIG = (symbol: string) => ({
