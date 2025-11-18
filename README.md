@@ -1,6 +1,6 @@
 # TradeVerse 📈
 
-![TradeVerse Banner](public/assets/images/dashboard-preview.png)
+![TradeVerse Banner](public/assets/images/dashboard.png)
 
 **TradeVerse** is a comprehensive FinTech dashboard and stock analysis platform built with **Next.js 16**. It provides real-time market data, interactive charts, portfolio tracking, and personalized AI-driven market insights sent directly to users' inboxes.
 
